@@ -1,0 +1,30 @@
+{
+    "testId": "drill_udfs_negative",
+    "type": "group",
+    "negative": true,
+    "description": "Negative test drill udfs",
+    "categories": [
+        "smoke",
+        "regression",
+        "dudf",
+        "negative"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "regex"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+           "mode": "gen",
+           "src": "Datasources/dynamic_udfs_negative/dynamic_udfs_negative.sh",
+           "dest": ""
+        }
+    ]
+}

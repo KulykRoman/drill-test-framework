@@ -1,0 +1,28 @@
+{
+    "testId": "drill_udfs",
+    "type": "group",
+    "description": "Test drill udfs",
+    "categories": [
+        "smoke",
+        "regression",
+	"dudf"
+    ],
+    "matrices": [
+        {
+            "query-file": ".*.q",
+            "schema": "dfs",
+            "output-format": "tsv",
+            "expected-file": ".*.e_tsv",
+            "verification-type": [
+                "in-memory"
+            ]
+        }
+    ],
+    "datasources": [
+        {
+           "mode": "gen",
+           "src": "Datasources/dynamic_udfs/dynamic_udfs.sh",
+           "dest": ""
+        }
+      ]
+}
